@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-fallthrough */
 /* eslint-disable react/jsx-no-undef */
@@ -126,16 +127,16 @@ function evaluate({ currentOperand, previousOperand, operation}) {
 }
 
 
-// eslint-disable-next-line no-undef
-const INTEGER_FORMATTER = new Int1.NumberFornat("en-us", {
+
+const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
      maximumFractionDigits: 0, 
 })
 
 function formatOperand(operand) {
      if(operand == null) return
-     const [integer, decimal] = operand.spilt('.')
-     if(decimal == null) return INTEGER_FORMATTER.fornat(integer)
-     return `${INTEGER_FORMATTER.fornat(integer)}.${decimal}`
+     const [integer, decimal] = operand.split('.')
+     if(decimal == null) return INTEGER_FORMATTER.format(integer)
+     return `${INTEGER_FORMATTER.format(integer)}.${decimal}`
 }
 
 
